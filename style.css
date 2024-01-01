@@ -1,0 +1,119 @@
+:root {
+    --color: hsl(263, 55%, 52%);
+    --color: hsl(217, 19%, 35%);
+    --color: hsl(219, 29%, 14%);
+    --color: hsl(0, 0%, 100%);
+    --color: hsl(0, 0%, 81%);
+    --color: hsl(210, 46%, 95%);
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+main {
+    width: 100%;
+    padding: 100px 0;
+    background-color: hsl(210, 46%, 95%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+}
+main .grid > div {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px hsl(0, 0%, 81%);
+}
+main .grid > div img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border: 2px solid  hsl(0, 0%, 81%);
+    border-radius: 50%;
+}
+main .grid > div .head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: hsl(0, 0%, 81%);
+}
+main .grid > div .head span {
+    font-weight: 500;
+}
+main .grid > div .bold {
+    position: relative;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: hsl(210, 46%, 95%);
+    font-size: 19px;
+    z-index: 1;
+}
+main .grid > div q {
+    font-size: 12px;
+    color:hsl(0, 0%, 81%);
+}
+main .grid .daniel {
+    grid-area: 1/1/2/5;
+    background-color: hsl(263, 55%, 52%);
+    position: relative;
+}
+main .grid .daniel::before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-image: url(bg-pattern-quotation.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 100px;
+}
+main .grid .jon {
+    grid-area: 1/5/2/7;
+    background-color: hsl(217, 19%, 35%);
+}
+main .grid .kira {
+    grid-area: 1/7/3/9;
+    background-color: hsl(0, 0%, 100%);
+}
+main .grid .kira .head h3,
+main .grid .jean .head h3 {
+    color: hsl(217, 19%, 35%);
+}
+main .grid .kira .bold,
+main .grid .jean .bold {
+    color: hsl(217, 19%, 35%);
+    font-weight: 600;
+}
+main .grid .kira q,
+main .grid .jean q {
+    color: hsl(217, 19%, 35%);
+}
+main .grid .jean {
+    grid-area: 2/1/3/3;
+    background-color: hsl(0, 0%, 100%);
+}
+main .grid .patrick {
+    grid-area: 2/3/3/7;
+    background-color: hsl(219, 29%, 14%);
+}
+@media (max-width: 767px) {
+    main .grid  {
+       display: flex;
+       flex-wrap: wrap;
+    }
+    main .grid .daniel::before {
+        right: 20px;
+    }
+    
+}
